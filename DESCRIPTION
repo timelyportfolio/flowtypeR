@@ -1,0 +1,19 @@
+Package: flowtypeR
+Type: Package
+Title: R htmlwidget for flowtype.js
+Version: 0.1
+Date: 2015-06-16
+Authors@R: c(
+    person(
+      "simplefocus", "team", role = c("aut", "cph"),
+      comment = "flowtype.js library in htmlwidgets/lib, http://simplefocus.com/flowtype"
+    ),
+    person(
+      "Kenton", "Russell", role = c("aut", "cre"),
+      comment = "R interface", email = "kent.russell@timelyportfolio.com"
+    )
+  )
+Maintainer: Kent Russell<kent.russell@timelyportfolio.com>
+Description: More about what it does (maybe more than one line)
+License: MIT + file LICENSE
+LazyData: TRUE

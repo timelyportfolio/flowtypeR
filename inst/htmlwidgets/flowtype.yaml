@@ -1,0 +1,9 @@
+dependencies:
+  - name: jquery
+    version: 2.1.4
+    src: htmlwidgets/lib/jquery/dist
+    script: jquery.min.js
+  - name: flowtype
+    version: 1.1
+    src: htmlwidgets/lib/flowtype.js
+    script: flowtype.js
