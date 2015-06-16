@@ -52,18 +52,25 @@ browsable(
 about_html <- readLines(file.path(R.home("doc/html"),"about.html"))
 browsable(
   tagList(
-   tags$div(style="padding:0em 2em 0em 2em;"
-     ,HTML(
-       about_html[do.call(seq,as.list(grep(x=about_html,pattern="body>")+c(1,-1)))]
-     )
-   )
+    tags$h1("with flowtype")
+    ,tags$div(id="flowtype-resize",style="padding:0em 1em 0em 1em; border: 2px solid gray;"
+      ,HTML(
+         about_html[do.call(seq,as.list(grep(x=about_html,pattern="<h2>")+c(0,-1)))]
+      )
+    )
+    ,tags$h1("without flowtype")
+    ,tags$div(id="flowtype-resize",style="padding:0em 1em 0em 1em; border: 2px dashed gray;"
+      ,HTML(
+         about_html[do.call(seq,as.list(grep(x=about_html,pattern="<h2>")+c(0,-1)))]
+       )
+    )
     ,flowtype(
-        minFont = 12
-        ,fontRatio = 20
+      '#flowtype-resize'
+      ,minFont = 12
+      ,fontRatio = 20
     )
   )
 )
-
 }
 }
 
