@@ -31,6 +31,22 @@
 #'   )
 #' )
 #'
+#' # using about.html from R help
+#' about_html <- readLines(file.path(R.home("doc/html"),"about.html"))
+#' browsable(
+#'   tagList(
+#'    tags$div(style="padding:0em 2em 0em 2em;"
+#'      ,HTML(
+#'        about_html[do.call(seq,as.list(grep(x=about_html,pattern="body>")+c(1,-1)))]
+#'      )
+#'    )
+#'     ,flowtype(
+#'         minFont = 12
+#'         ,fontRatio = 20
+#'     )
+#'   )
+#' )
+#'
 #' }
 #' @import htmlwidgets
 #'
