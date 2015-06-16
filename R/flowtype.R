@@ -1,9 +1,20 @@
 #' flowtype.js for a better reading experience
 #'
 #' One and only function of this htmlwidget which runs
-#'  \href{https://github.com/simplefocus/flowtype.js}{flowtype.js} to a
+#'  \href{https://github.com/simplefocus/flowtype.js}{flowtype.js} on a
 #'  \code{CSS selector} of your choice.  By default, \code{body} will be
 #'  the \code{CSS selector}, so all text on the page will adjust to flowtype.
+#'
+#' @param selector \code{string} of a valid \code{CSS} selector.  \code{body} is the default.
+#' @param minimum \code{integer} see \href{https://github.com/simplefocus/FlowType.JS#thresholds}{Thresholds}
+#' @param maximum \code{integer} see \href{https://github.com/simplefocus/FlowType.JS#thresholds}{Thresholds}
+#' @param minFont \code{integer} see \href{https://github.com/simplefocus/FlowType.JS#thresholds}{Thresholds}
+#' @param maxFont \code{integer} see \href{https://github.com/simplefocus/FlowType.JS#thresholds}{Thresholds}
+#' @param fontRatio \code{integer} see \href{https://github.com/simplefocus/FlowType.JS#font-size}{Font-size}
+#' @param width a valid \code{CSS} size for the width of the htmlwidget container \code{div}.  The default
+#'          is \code{0} since we expect the container to be invisible.
+#' @param height a valid \code{CSS} size for the height of the htmlwidget container \code{div}.  The default
+#'          is \code{0} since we expect the container to be invisible.
 #'
 #' @examples
 #' \dontrun{
