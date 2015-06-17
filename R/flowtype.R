@@ -32,25 +32,40 @@
 #' )
 #'
 #' # using about.html from R help
+#' library("flowtypeR")
+#' library("htmltools")
+#' library("shiny")
+#'
 #' about_html <- readLines(file.path(R.home("doc/html"),"about.html"))
 #' browsable(
 #'   tagList(
-#'     tags$h1("with flowtype")
-#'     ,tags$div(id="flowtype-resize",style="padding:0em 1em 0em 1em; border: 2px solid gray;"
-#'       ,HTML(
-#'          about_html[do.call(seq,as.list(grep(x=about_html,pattern="<h2>")+c(0,-1)))]
+#'     bootstrapPage(
+#'       tags$div(class="row"
+#'         ,tags$div(class="col-xs-6"
+#'           ,tags$h1("with flowtype")
+#'           ,tags$div(
+#'             id="flowtype-resize"
+#'             ,style="padding:0em 1em 0em 1em; border: 2px solid gray;"
+#'             ,HTML(
+#'               about_html[do.call(seq,as.list(grep(x=about_html,pattern="<h2>")+c(0,-1)))]
+#'             )
+#'           )
+#'         )
+#'         ,tags$div(class="col-xs-6"
+#'           ,tags$h1("without flowtype")
+#'           ,tags$div(id="flowtype-resize"
+#'             ,style="padding:0em 1em 0em 1em; border: 2px dashed gray;"
+#'             ,HTML(
+#'               about_html[do.call(seq,as.list(grep(x=about_html,pattern="<h2>")+c(0,-1)))]
+#'             )
+#'           )
+#'         )
 #'       )
-#'     )
-#'     ,tags$h1("without flowtype")
-#'     ,tags$div(id="flowtype-resize",style="padding:0em 1em 0em 1em; border: 2px dashed gray;"
-#'       ,HTML(
-#'          about_html[do.call(seq,as.list(grep(x=about_html,pattern="<h2>")+c(0,-1)))]
-#'        )
 #'     )
 #'     ,flowtype(
 #'       '#flowtype-resize'
 #'       ,minFont = 12
-#'       ,fontRatio = 25
+#'       ,fontRatio = 20
 #'     )
 #'   )
 #' )
